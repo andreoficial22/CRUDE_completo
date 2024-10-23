@@ -1,0 +1,17 @@
+<?php
+$maquina = "localhost";
+$usuario = "root";
+$senha= "";
+$nome_do_banco = "base_ana_valeria";
+$porta = 3306;
+
+
+try {
+    $pdo = new PDO("mysql:host=$maquina;port=$porta;dbname=$nome_do_banco;charset=utf8", "$usuario", "$senha");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+} catch (PDOException $erro) {
+    echo "Falha ao conectar com no BD: $nome_do_banco <br>" . $erro->getMessage();
+}
+
+?>
